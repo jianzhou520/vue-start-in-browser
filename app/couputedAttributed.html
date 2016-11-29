@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="computed"></div>
+    <script>
+        let Test = Vue.extend({
+            template: `
+                <div>
+                    <div>hello world, now is {{time}}</div>
+                    <button @click="click()">Click me</button>
+                </div>
+            `,
+            replace: true
+        });
+        let Hello = new Test({
+            el: '#computed',
+            data: {
+                time: Date.now(),
+                click: () => alert('you just clicked me!')
+            }
+        });
+    </script>
+</body>
+</html>
